@@ -1,0 +1,16 @@
+{
+    "dev": {
+      "driver": "pg",
+      "host": "127.0.0.1",
+      "database": "animals",
+      "user": "magical_user",
+      "password": "123a7mednoo"
+    },
+    "test": {
+      "driver": "pg",
+      "host": "127.0.0.1",
+      "database": "animals_worlds_test",
+      "user": "magical_user",
+      "password": "123a7mednoo"
+    }
+  }
