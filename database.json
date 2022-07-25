@@ -1,16 +1,19 @@
 {
+  "defaultEnv":{"ENV": "NODE_ENV"},
     "dev": {
       "driver": "pg",
-      "host": "127.0.0.1",
-      "database": "animals",
-      "user": "magical_user",
-      "password": "123a7mednoo"
+      "host": {"ENV": "POSTGRES_HOST"},
+      "port": {"ENV": "POSTGRES_PORT"},
+      "database": {"ENV": "POSTGRES_DB"},
+      "user": {"ENV": "POSTGRES_USER"},
+      "password": {"ENV": "POSTGRES_PASSWORD"}
     },
     "test": {
       "driver": "pg",
-      "host": "127.0.0.1",
-      "database": "animals_worlds_test",
-      "user": "magical_user",
-      "password": "123a7mednoo"
+      "host": {"ENV": "POSTGRES_HOST"},
+      "port": {"ENV": "POSTGRES_PORT"},
+      "database": {"ENV": "POSTGRES_DB"},
+      "user": {"ENV": "POSTGRES_USER"},
+      "password": {"ENV": "POSTGRES_PASSWORD"}
     }
   }
