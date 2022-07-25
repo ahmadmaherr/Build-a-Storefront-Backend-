@@ -1,1 +1,0 @@
-CREATE TABLE animals ( names VARCHAR(100));

@@ -13,12 +13,12 @@ export const create = async (
   try {
     const user = await userModel.create(req.body);
     res.json({
-      status: "success",
+      status: "Success",
       data: { ...user },
       message: "User Created Successfully",
     });
-  } catch (err) {
-    next(err);
+  } catch (error) {
+    next(error);
   }
 };
 
@@ -30,12 +30,12 @@ export const getMany = async (
   try {
     const user = await userModel.getMany();
     res.json({
-      status: "success",
+      status: "Success",
       message: "Done",
       data: [user],
     });
-  } catch (err) {
-    next(err);
+  } catch (error) {
+    next(error);
   }
 };
 
@@ -47,12 +47,12 @@ export const getOne = async (
   try {
     const user = await userModel.getOne(req.params.id as unknown as string); 
     res.json({
-      status: "sucess",
-      message: "done",
+      status: "Success",
+      message: "Done",
       data: user,
     });
-  } catch (err) {
-    next(err);
+  } catch (error) {
+    next(error);
   }
 };
 
@@ -64,12 +64,12 @@ export const updateOne = async (
   try {
     const user = await userModel.updateOne(req.body);
     res.json({
-      status: "sucess",
-      message: "done",
+      status: "Success",
+      message: "Done",
       data: user,
     });
-  } catch (err) {
-    next(err);
+  } catch (error) {
+    next(error);
   }
 };
 
@@ -81,12 +81,12 @@ export const deleteOne = async (
   try {
     const user = await userModel.deleteOne(req.params.id as unknown as string);
     res.json({
-      status: "user deleted successfully",
-      message: "done",
+      status: "User Deleted Successfully",
+      message: "Done",
       data: user,
     });
-  } catch (err) {
-    next(err);
+  } catch (error) {
+    next(error);
   }
 };
 // authenticate
@@ -104,16 +104,16 @@ export const authenticate = async (
     );
     if (!user) {
       return res.status(401).json({
-        status: "error",
-        message: "the user name and password do not match please try again",
+        status: "Error",
+        message: "The user name and password do not match please try again",
       });
     }
     return res.json({
-      status: "success",
+      status: "Success",
       data: { ...user, token },
-      message: "user authenticated successfully",
+      message: "User Authenticated Successfully",
     });
-  } catch (err) {
-    return next(err);
+  } catch (error) {
+    return next(error);
   }
 };

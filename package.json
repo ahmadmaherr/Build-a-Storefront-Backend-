@@ -6,14 +6,16 @@
   "scripts": {
     "start": "npm run build && nodemon build/index.js",
     "watch": "tsc-watch --esModuleInterop src/server.ts --outDir ./dist --onSuccess \"node ./dist/server.js\"",
-    "test": "npx tsc && jasmine",
     "tsc": "tsc",
     "dev": "nodemon ./src/index.ts",
     "clean": "rimraf build/",
     "build": "yarn clean && npx tsc",
     "format": "prettier --write 'src/**/*.{ts,tsx,js,jsx}'",
     "lint": "eslint . --ext .ts",
-    "migrate": "db-migrate up"
+    "migrate": "db-migrate up",
+    "test": "set NODE_ENV=test && db-migrate --env test up  -c 10 && npx tsc && jasmine-ts && db-migrate --env test reset -c 10",
+    "migration:run": "db-migrate up",
+    "lint:fix": "eslint src/**/*.ts --fix"
   },
   "author": "Udacity",
   "license": "ISC",
